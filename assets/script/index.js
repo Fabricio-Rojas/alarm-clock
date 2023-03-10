@@ -17,21 +17,18 @@ function updateTime() {
     let minute = now.getMinutes().toString().padStart(2, '0');
     let second = now.getSeconds().toString().padStart(2, '0');
     
-    clock.innerText = `${hour}:${minute}:${second}`
+    clock.innerText = `${hour}:${minute}:${second}`;
 
     // if statement
     if (`${hour}:${minute}` == alarmTime.innerText) {
-        clock.style.color = '#00D100';
+        clock.style.color = 'rgb(53, 168, 114)';
         alarmSound.play();
     } else {
         clock.style.color = '#fff';
-    }
+    };
 };
 
 setInterval(updateTime, 1000);
-
-// Audio limit function
-
 
 // Time Inp Validation
 timeInp.addEventListener('keyup', function() {
@@ -45,10 +42,15 @@ timeInp.addEventListener('keyup', function() {
 // Ser Alarm Function
 alarmBtn.addEventListener('click', function() {
     const validTime = /^([0-1]?[0-9]|2[0-3]):([0-5][0-9])$/;
+    const currentTime = clock.innerText.slice(0, -3);
 
-    if (validTime.test(timeInp.value)) {
+    if (timeInp.value == currentTime) {
+        alarmTime.innerText = "Alarm can't be set to current time";
+        alarmTime.style.marginLeft = '5px'
+    } else if (validTime.test(timeInp.value)) {
         alarmTime.innerText = timeInp.value;
+        alarmTime.style.marginLeft = '5px'
     } else {
         alarmTime.innerText = 'Please input a valid 24h time';
-    }
-})
+    };
+});

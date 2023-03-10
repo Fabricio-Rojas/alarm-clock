@@ -22,10 +22,6 @@ p {
     text-align: center;
 }
 
-span {
-    margin-left: 5px;
-}
-
 .buttons {
     margin-top: 40px;
     display: flex;
