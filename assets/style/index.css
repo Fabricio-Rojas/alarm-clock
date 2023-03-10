@@ -22,6 +22,10 @@ p {
     text-align: center;
 }
 
+span {
+    margin-left: 5px;
+}
+
 .buttons {
     margin-top: 40px;
     display: flex;
@@ -36,8 +40,12 @@ p {
     border-radius: 50px;
     background-color: rgba(255, 255, 255, 0.1);
     cursor: pointer;
-    padding: 0 26.5px;
+    text-align: center;
     margin-right: 10px;
+}
+
+#time:focus {
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 #set-alarm {
@@ -49,4 +57,8 @@ p {
     background-color: rgb(63, 203, 138);
     cursor: pointer;
     margin-left: 10px;
+}
+
+#set-alarm:active {
+    background-color: rgb(53, 168, 114);
 }
