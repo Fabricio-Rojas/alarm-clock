@@ -6,6 +6,10 @@ const alarmTime = document.querySelector('span');
 const timeInp = document.querySelector('#time');
 const alarmBtn = document.querySelector('#set-alarm');
 
+const alarmSound = new Audio('./assets/audio/AlarmClock.mp3');
+alarmSound.type = 'audio/mp3';
+alarmSound.volume = 0.15;
+
 // Time Update function
 function updateTime() {
     let now = new Date();
@@ -16,9 +20,18 @@ function updateTime() {
     clock.innerText = `${hour}:${minute}:${second}`
 
     // if statement
+    if (`${hour}:${minute}` == alarmTime.innerText) {
+        clock.style.color = '#00D100';
+        alarmSound.play();
+    } else {
+        clock.style.color = '#fff';
+    }
 };
 
 setInterval(updateTime, 1000);
+
+// Audio limit function
+
 
 // Time Inp Validation
 timeInp.addEventListener('keyup', function() {
