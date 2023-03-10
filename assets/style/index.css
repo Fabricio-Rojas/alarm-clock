@@ -1,0 +1,52 @@
+@import url(./Reset.css);
+
+.container {
+    width: min(100% - 30px, 1280px);
+    margin-inline: auto;
+}
+
+body {
+    background-color: #1a1d28;
+    padding-top: 200px;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 100px;
+    font-weight: 300;
+}
+
+p {
+    color: #fff;
+    text-align: center;
+}
+
+.buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+#time {
+    height: 35px;
+    width: 100px;
+    color: #eeeeee;
+    letter-spacing: 0.5px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    padding: 0 26.5px;
+    margin-right: 10px;
+}
+
+#set-alarm {
+    height: 35px;
+    width: 100px;
+    color: #eeeeee;
+    letter-spacing: 0.5px;
+    border-radius: 50px;
+    background-color: rgb(63, 203, 138);
+    cursor: pointer;
+    margin-left: 10px;
+}
